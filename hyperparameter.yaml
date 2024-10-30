@@ -1,0 +1,10 @@
+BATCH_SIZE : 32
+EPOCH : 100
+TRAIN_RATIO : 0.8
+LR : 1e-3  # Learning Rate
+train_new_model : True
+LR_STEP : 30
+LR_GAMMA : 0.1
+
+SAVE_MODEL_PATH : 'D:/DeepLearning_org/model/CNN/'
+SAVE_HISTORY_PATH : 'D:/DeepLearning_org/history/CNN/'

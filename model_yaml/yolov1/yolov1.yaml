@@ -1,0 +1,38 @@
+train_dir : 'D:/DeepLearning_org/dataset/yolov1/train'
+test_dir : 'D:/DeepLearning_org/dataset/yolov1/test'
+
+class : ['apple', 'banana', 'orange']
+
+architecture_config : [
+    # tuple : (kernel_size, number of filter, stride, padding)
+    # str : Maxpool
+    # list : [(conv1), (conv2), repeat]
+
+    [7, 64, 2, 3],
+    'M',
+    [3, 192, 1, 1],
+    'M',
+    [1, 128, 1, 0],
+    [3, 256, 1, 1],
+    [1, 256, 1, 0],
+    [3, 512, 1, 1],
+    'M',
+    [[1, 256, 1, 0], [3, 512, 1, 1], 4],
+    [1, 512, 1, 0],
+    [3, 1024, 1, 1],
+    'M',
+    [[1, 512, 1, 0], [3, 1024, 1, 1], 2],
+    [3, 1024, 1, 1], 
+    [3, 1024, 2, 1],
+    [3, 1024, 1, 1], 
+    [3, 1024, 1, 1]
+]
+
+LEARNING_RATE : 1e-5
+BATCH_SIZE : 4
+WEIGTH_DECAY : 0
+EPOCHS : 1000
+NUM_WORKERS : 2
+PIN_MEMORY : True
+LOAD_MODEL : False
+LOAD_MODEL_FILE : 'model.pth'
